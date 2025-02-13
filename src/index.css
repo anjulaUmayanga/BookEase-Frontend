@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='text'],input[type='password'], input[type="email"]{
+    @apply rounded-3xl w-full ring-2 ring-blue-200 outline-none h-12 text-xl pl-4 mt-4 hover:ring-red-400
+}
