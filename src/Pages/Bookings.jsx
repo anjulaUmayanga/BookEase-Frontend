@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import BookingDialog from "../Component/BookingDialog"; // Adjust the import as needed
-import ConflictDialog from "../Component/ConflictDialog"; // Adjust the import as needed
+import BookingDialog from "../Component/BookingDialog"; 
+import ConflictDialog from "../Component/ConflictDialog"; 
 
 const Bookings = () => {
     const [bookings, setBookings] = useState([]);

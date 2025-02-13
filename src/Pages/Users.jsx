@@ -28,10 +28,10 @@ export default function Users() {
         fetchUsers();
     }, []);
 
-    // Toggle sidebar menu
+    
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-    // Close sidebar when clicking outside
+    
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (!event.target.closest("#mobile-menu") && !event.target.closest("#menu-button")) {

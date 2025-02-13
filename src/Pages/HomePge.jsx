@@ -27,10 +27,10 @@ export default function Home() {
         }
     }, []);
 
-    // Toggle sidebar menu
+   
     const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
 
-    // Close sidebar when clicking outside
+    
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target) && !event.target.closest("#menu-button")) {
@@ -38,7 +38,7 @@ export default function Home() {
             }
         };
 
-        // Only add event listener if the menu is open
+        
         if (isMenuOpen) {
             document.addEventListener("click", handleClickOutside);
         } else {
@@ -52,12 +52,12 @@ export default function Home() {
         <div className="w-full flex flex-row bg-gray-100 relative">
             {isAdmin && (
                 <>
-                    {/* Admin LeftBar for large screens */}
+                    
                     <div className="hidden lg:block lg:w-1/6 w-full">
                         <AdminLeftBar />
                     </div>
 
-                    {/* Admin LeftBar Icon for small screens */}
+                    
                     <div className="lg:hidden sm:block">
                         <button
                             id="menu-button"
@@ -83,7 +83,7 @@ export default function Home() {
                         </button>
                     </div>
 
-                    {/* Admin LeftBar Popup for small screens */}
+                    
                     {isMenuOpen && (
                         <div
                             ref={sidebarRef}
@@ -97,10 +97,10 @@ export default function Home() {
                 </>
             )}
 
-            {/* Main content area */}
+         
             <div className="flex flex-col w-full mt-4 ml-8">
                 <div className="ml-8">
-                    {/* Calander component with responsiveness */}
+                    
                     <div className="w-full items-center sm:w-3/4 lg:w-2/3 xl:w-full">
                         <Calander />
                     </div>

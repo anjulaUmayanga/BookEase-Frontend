@@ -5,14 +5,13 @@ const LogoutPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Clear authentication token from localStorage
+        
         localStorage.removeItem("token");
 
-        // Optionally, you could also clear sessionStorage if used
-        // sessionStorage.removeItem("token");
+       
 
-        // Redirect to the login page or homepage
-        navigate("/"); // You can change this to your desired route
+        
+        navigate("/"); 
     }, [navigate]);
 
     return (

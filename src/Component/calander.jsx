@@ -100,7 +100,7 @@ export default function Calendar() {
         return events.some((event) => {
             const eventStart = new Date(event.start);
             const eventEnd = new Date(event.end);
-            // Check if the new event's time overlaps with any existing event
+            
             return newStartTime < eventEnd && newEndTime > eventStart;
         });
     };
@@ -115,7 +115,7 @@ export default function Calendar() {
             ...eventDetails,
             startTime: selectedStartTime,
             endTime: formattedEndTime,
-            allDay: false, // Default to false, can be toggled by the user
+            allDay: false, 
         });
         setIsPopupVisible(true);
     };
@@ -126,11 +126,11 @@ export default function Calendar() {
         const newStartTime = new Date(eventDetails.startTime);
         const newEndTime = new Date(eventDetails.endTime);
 
-        // Check for overlapping events
+        
         if (checkForOverlappingEvent(newStartTime, newEndTime)) {
-            setIsPopupVisible(false); // Close the time select dialog
-            setIsConflict(true); // Show conflict dialog
-            return; // Prevent form submission if there's an overlap
+            setIsPopupVisible(false); 
+            setIsConflict(true); 
+            return; 
         }
 
         const newEvent = {
@@ -156,10 +156,10 @@ export default function Calendar() {
                 );
                 console.log("Event edited successfully:", response.data);
             } else {
-                // Creating a new event
+                
                 const response = await axios.post(
                     "http://localhost:3000/api/events",
-                    [newEvent], // Send the new event as an array for multiple events
+                    [newEvent], 
                     {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -169,7 +169,7 @@ export default function Calendar() {
                 console.log("Event added successfully:", response.data);
             }
 
-            // Fetch updated events and reset eventDetails
+          
             fetchEvents();
             setEventDetails({
                 title: "",
